@@ -3,7 +3,7 @@ interface ButtonProps {
   secondary?: boolean;
   fullwidth?: boolean;
   large?: boolean;
-  onclick: () => void;
+  onClick: () => void;
   disabled?: boolean;
   outline?: boolean;
 }
@@ -13,13 +13,13 @@ const Button: React.FC<ButtonProps> = ({
   secondary,
   fullwidth,
   large,
-  onclick,
+  onClick,
   disabled,
   outline,
 }) => {
   return (
     <button
-      onClick={onclick}
+      onClick={onClick}
       disabled={disabled}
       className={`
     disabled:opacity-70

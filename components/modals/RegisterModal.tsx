@@ -9,9 +9,7 @@ import { signIn } from "next-auth/react";
 
 import { toast } from "react-hot-toast";
 
-interface Props {}
-
-const RegisterModal: React.FC<Props> = ({}) => {
+const RegisterModal = ({}) => {
   const LoginModal = useLoginModal();
   const RegisterModal = useRegisterModal();
 
@@ -20,6 +18,7 @@ const RegisterModal: React.FC<Props> = ({}) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const onToggle = useCallback(() => {
     if (isLoading) return;
     RegisterModal.onClose();
@@ -27,10 +26,9 @@ const RegisterModal: React.FC<Props> = ({}) => {
   }, [isLoading, RegisterModal, LoginModal]);
 
   const onSubmit = useCallback(async () => {
-    console.log("Register");
     try {
       setIsLoading(true);
-
+      console.log("hello");
       await axios.post("/api/register", {
         email,
         password,
