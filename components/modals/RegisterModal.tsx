@@ -3,6 +3,11 @@ import { useCallback, useState } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
 import useRegisterModal from "@/hooks/useRegisterModal";
+import axios from "axios";
+
+import { signIn } from "next-auth/react";
+
+import { toast } from "react-hot-toast";
 
 interface Props {}
 
@@ -15,7 +20,6 @@ const RegisterModal: React.FC<Props> = ({}) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
   const onToggle = useCallback(() => {
     if (isLoading) return;
     RegisterModal.onClose();
@@ -23,16 +27,31 @@ const RegisterModal: React.FC<Props> = ({}) => {
   }, [isLoading, RegisterModal, LoginModal]);
 
   const onSubmit = useCallback(async () => {
+    console.log("Register");
     try {
       setIsLoading(true);
+
+      await axios.post("/api/register", {
+        email,
+        password,
+        username,
+        name,
+      });
+
+      toast.success("Account created.");
+      signIn("credentials", {
+        email,
+        password,
+      });
 
       RegisterModal.onClose();
     } catch (err) {
       console.log(err);
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
-  }, [RegisterModal]);
+  }, [RegisterModal, email, password, username, name]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -58,6 +77,7 @@ const RegisterModal: React.FC<Props> = ({}) => {
       <Input
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
+        type="password"
         value={password}
         disabled={isLoading}
       />

@@ -4,6 +4,8 @@ import Input from "../Input";
 import Modal from "../Modal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 
+import { signIn } from "next-auth/react";
+
 interface Props {}
 
 const LoginModal: React.FC<Props> = ({}) => {
@@ -24,7 +26,10 @@ const LoginModal: React.FC<Props> = ({}) => {
     try {
       setIsLoading(true);
 
-      // TODO APP LOG IN
+      await signIn("credentials", {
+        email,
+        password,
+      });
 
       LoginModal.onClose();
     } catch (err) {
@@ -32,7 +37,7 @@ const LoginModal: React.FC<Props> = ({}) => {
     } finally {
       setIsLoading(false);
     }
-  }, [LoginModal]);
+  }, [LoginModal, email, password]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -46,6 +51,7 @@ const LoginModal: React.FC<Props> = ({}) => {
       <Input
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
+        type="password"
         value={password}
         disabled={isLoading}
       />
@@ -69,7 +75,6 @@ const LoginModal: React.FC<Props> = ({}) => {
       </p>
     </div>
   );
-
 
   return (
     <Modal
