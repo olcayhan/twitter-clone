@@ -55,6 +55,7 @@ const EditModal = () => {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
+      editModal.onClose()
     }
   }, [
     bio,
