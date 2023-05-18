@@ -61,7 +61,7 @@ const LoginModal: React.FC<Props> = ({}) => {
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
       <p>
-        First time using twitter?
+        First time using flickter?
         <span
           onClick={onToggle}
           className="
