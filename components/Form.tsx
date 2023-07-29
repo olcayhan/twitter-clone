@@ -60,6 +60,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               value={body}
               className="
                     disabled:opacity-80
+                    h-32
                     peer
                     resize-none
                     mt-3
@@ -70,6 +71,8 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                     placeholder-neutral-500
                     text-white
                 "
+                maxLength={200}
+                minLength={5}
               placeholder={placeholder}
             ></textarea>
             <hr
