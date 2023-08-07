@@ -1,38 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Twitter Clone
 
-## Getting Started
+<img src='https://github.com/olcayhan/twitter-clone/assets/71206063/fb7ec9fb-93c4-416a-bf79-c4fd8477c8d7' width='500px'/>
 
-First, run the development server:
+Website Link : https://flickter.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This repository contains a simple Twitter clone project, aiming to replicate some of the basic features and functionality of the Twitter platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [How to Use](#how-to-use)
+- [Contributing](#contributing)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Introduction
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The Twitter Clone project is created to provide a simplified version of the popular social media platform Twitter. It demonstrates the basic concept and functionalities of Twitter, including user profiles, tweeting, following other users, and viewing timelines.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+The Twitter Clone currently includes the following features:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- User registration and authentication.
+- Creating, editing, and deleting tweets.
+- Following and unfollowing other users.
+- Viewing a timeline with tweets from followed users.
+- Liking and retweeting tweets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Please note that this is a basic implementation of Twitter's core features and may not include all the complexities of the real Twitter platform.
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project is built using the following technologies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Frontend: HTML, CSS, JavaScript (You can also mention the frontend framework if used, e.g., React, Vue, Angular).
+- Backend: (mention the backend technology, e.g., Node.js with Express, Django, Ruby on Rails, etc.).
+- Database: (mention the database technology, e.g., MongoDB, PostgreSQL, MySQL, etc.).
+- Any additional libraries or dependencies used.
+
+## How to Use
+
+To use the Twitter Clone project:
+
+1. Clone or download this repository to your local machine.
+2. Set up the backend server and database according to the instructions provided in the backend folder (if applicable).
+3. Set up the frontend by following the instructions in the frontend folder (if applicable).
+4. Start the development server and navigate to the project in your web browser.
+
+Feel free to modify and extend the project based on your needs. You can add more features, improve the UI, or integrate it with other services.
+
+## Contributing
+
+Contributions to this project are welcome! If you have any ideas for improvements, bug fixes, or new features, please feel free to submit a Pull Request. Before contributing, please read the guidelines mentioned in the [CONTRIBUTING](CONTRIBUTING.md) file.
